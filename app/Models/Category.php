@@ -5,16 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Chirp extends Model
+class Category extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        "message"
+        "name",
+        "parent_id"
     ];
-
-    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
 }
